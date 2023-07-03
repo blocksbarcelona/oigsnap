@@ -30,7 +30,7 @@ const sc_date = (year + "-" + month + "-" + day + "-" + hours + "-" + minutes + 
 // this script accepts a url as an argument
 let url = new URL(process.argv[2]);
 // the filename will be extracted from the hostname of the url
-let filename = `${url.hostname}-${sc_date}.png`;
+let filename = `./snapshots/${url.hostname}-${sc_date}.png`;
  
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
