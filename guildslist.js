@@ -22,7 +22,7 @@ async function getGuildData(guildName) {
         const response = await axios.get(url);
         const data = response.data;
 
-        const filePath = `./guilds/${guildName}_${formattedStartDate}_${endDate}.json`;
+        const filePath = `./snapshots/guilds/${guildName}_${formattedStartDate}_${endDate}.json`;
         fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
         console.log(`Data saved for guild: ${guildName}`);
@@ -42,7 +42,7 @@ async function getEvaluationsTable() {
 
         if (response.data && response.data.rows) {
             const evaluations = response.data.rows;
-            console.log("Evaluations retrieved:", evaluations); // Logging the evaluations for debugging
+            //console.log("Evaluations retrieved:", evaluations); // Logging the evaluations for debugging
 
             const latestScores = evaluations[evaluations.length - 1].scores;
             console.log("Latest scores:", latestScores); // Logging the latest scores for debugging
